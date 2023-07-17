@@ -5,7 +5,7 @@ describe('Navigation', () => {
     cy.visit('http://localhost:3000')
 
     // Find a link with an href attribute containing "about" and click it
-    cy.get('div').should('exist')
+    cy.get('main').should('exist')
 
   })
 })
