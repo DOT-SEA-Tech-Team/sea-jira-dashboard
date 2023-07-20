@@ -136,7 +136,7 @@ const Home = async () => {
     const currentSprintInfo = buildTable(issues)
     const component = (
       <>
-        <h2 className="text-2xl">
+        <h2 className="text-2xl pt-3">
           {title} - {currentSprintInfo.name}
         </h2>
         <table className="mb-5 w-2/3">
@@ -179,13 +179,13 @@ const Home = async () => {
   const currentSprintId = currentSprint.id
   const nextSprintId = await findNextSprint(currentSprintId)
   const nextSprintData = await getJiraData(`=%20${nextSprintId}`)
-  const nextSprint = buildSprint('Next Sprint', nextSprintData.issues)
+  const nextSprint = buildSprint('Next Sprint (pending prioritization and Sprint Planning)', nextSprintData.issues)
 
   return (
-    <main className="text-slate-50 w-full px-10">
+    <main className="text-slate-50 w-full px-10 text-sm">
       {currentSprint.component}
       {nextSprint.component}
-      <div className="info">
+      <div className="info pt-5">
         <h2 className="text-2xl">Information</h2>
         If you don&apos;t see all expected information, make sure that:
         <ol>
