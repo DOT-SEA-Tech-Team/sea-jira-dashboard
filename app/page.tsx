@@ -143,8 +143,8 @@ const Home = async () => {
           <thead>
             <tr>
               <th className="w-1/12">Priority</th>
-              <th className="w-1/12">Story</th>
-              <th className="w-5/12">Story</th>
+              <th className="w-1/12">Story Link</th>
+              <th className="w-5/12">Summary</th>
               <th className="w-1/12">Status</th>
               <th className="w-1/12">Completed</th>
               <th className="w-3/12">Main Assignee</th>
