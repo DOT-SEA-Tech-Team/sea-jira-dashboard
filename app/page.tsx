@@ -38,7 +38,7 @@ const Home = async () => {
 
   const getJiraData = async (sprint: string) => {
     const response = await fetch(
-      `https://rebuiltfw.atlassian.net/rest/api/3/search?jql=project%3DDW%20and%20sprint%20${sprint}%20and%20labels%20IN%20(dot%2Chipflat)%20order%20by%20priority%20desc`,
+      `https://rebuiltfw.atlassian.net/rest/api/3/search?jql=project%3DDW%20and%20sprint%20${sprint}%20and%20labels%20IN%20(dot%2Chipflat)%20order%20by%20priority%20desc,%20created%20ASC`,
       requestOptions
     )
     if (response.status !== 200 && response.status !== 201) return undefined
