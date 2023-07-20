@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Home = async () => {
   const myHeaders = new Headers()
   myHeaders.append('Authorization', `Basic ${process.env.JIRA_TOKEN}`)
@@ -8,6 +10,7 @@ const Home = async () => {
     </main>
   )
   const sprintPrefix = 'DW Sprint'
+  const issueUrlPrefix = 'https://rebuiltfw.atlassian.net/browse/'
 
   const requestOptions = {
     method: 'GET',
@@ -93,6 +96,7 @@ const Home = async () => {
           sprintData.id = latestSprint
           sprintData.name = sprintName
         }
+        const issueUrl = issueUrlPrefix + element.key
         const resolutionDate = new Date(element.fields.resolutiondate)
         const day = resolutionDate.getDate()
         const month = resolutionDate.getMonth()
@@ -102,6 +106,9 @@ const Home = async () => {
           <tr className="border-secondary-color border-2">
             <td className={`${priority[0]} px-2 py-2 border-r-2`}>
               {priority[1]}
+            </td>
+            <td className="px-2 py-2 border-r-2">
+              <Link className='text-orange-400' href={issueUrl} target="_blank">{element.key}</Link>
             </td>
             <td className="px-2 py-2 border-r-2">{element.fields.summary}</td>
             <td className="px-2 py-2  border-r-2">
@@ -136,7 +143,8 @@ const Home = async () => {
           <thead>
             <tr>
               <th className="w-1/12">Priority</th>
-              <th className="w-6/12">Story</th>
+              <th className="w-1/12">Story</th>
+              <th className="w-5/12">Story</th>
               <th className="w-1/12">Status</th>
               <th className="w-1/12">Completed</th>
               <th className="w-3/12">Main Assignee</th>
