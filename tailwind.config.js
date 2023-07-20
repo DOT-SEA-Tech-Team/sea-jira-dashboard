@@ -3,15 +3,8 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      width: {
-        '7/10': '70%',
-      },
-      minWidth: {
-        'full-lg': '1090px',
-        full: '545px',
-      },
       maxWidth: {
-        article: '512px',
+        summary: '555px',
       },
       colors: {
         primary: {

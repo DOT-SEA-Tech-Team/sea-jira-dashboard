@@ -139,7 +139,7 @@ const Home = async () => {
         <h2 className="text-2xl">
           {title} - {currentSprintInfo.name}
         </h2>
-        <table className="mb-5">
+        <table className="mb-5 w-2/3">
           <thead>
             <tr>
               <th className="w-1/12">Priority</th>
